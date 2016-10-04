@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="navbar">
+		<%= link_to 'Articles', articles_path %> >> <%= @article.title %>
+	</div>
+	<h1><%= @article.title %></h1>
+	<p>
+		<%= @article.body %>
+	</p>
+
+	<%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+	<%= link_to "edit", edit_article_path(@article) %>
+
+</body>
+</html>

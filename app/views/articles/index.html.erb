@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table>
+		<% @articles.each do |article| %>
+			<tr>
+				<td><%= article.title %></td>
+				<td><%=article.body%></td>
+				<td><%= link_to 'Continue Reading...' , article_path(article) %></td>
+				<td><%= link_to "delete", article_path(article), method: :delete, data: {confirm: "Really delete the article?"} %></td>
+				
+			</tr>
+		<% end -%>
+	</table>
+	
+	<%= link_to 'Create new article', new_article_path %>
+</body>
+</html>
