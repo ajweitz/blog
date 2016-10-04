@@ -10,7 +10,9 @@
 				<td><%= article.title %></td>
 				<td><%=article.body%></td>
 				<td><%= link_to 'Continue Reading...' , article_path(article) %></td>
+				<% if logged_in? %>
 				<td><%= link_to "delete", article_path(article), method: :delete, data: {confirm: "Really delete the article?"} %></td>
+				<% end %>
 				
 			</tr>
 		<% end -%>

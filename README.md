@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Blog application, built with Ruby on Rails.
+Based on the "Blogger 2" tutorial you can find on http://tutorials.jumpstartlab.com/projects/blogger.html
+And a part of The Odin Project.
 
-Things you may want to cover:
+To use the blog you must first register your admin user on: http://<your domain>/authors/new
+And then Login through: http://<your domain>/Login
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
