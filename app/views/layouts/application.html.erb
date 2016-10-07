@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog</title>
-    <%= csrf_meta_tags %>
+<head>
+	<title>Blog</title>
+	<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans:400&subset=latin', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Playfair+Display', media: 'all', 'data-turbolinks-track' => true %>
+
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
 <body>
+<header id="header">
+	<h1>Header</h1>
+</header>
   <div id="container">
-    <div id="content">
-      <%= yield %>
-      <hr>
-      <h6>
-        <% if logged_in? %>
-          <%= "Logged in as #{current_user.email}" %>
-          <%= link_to "(logout)", logout_path %>
-        <% else %>
-          <%= link_to "(login)", login_path %>
-        <% end %>
-      </h6>
-    </div>
+	<div id="content">
+	  <%= yield %>
+	</div>
+	  <hr>
+	  <footer>
+		<% if logged_in? %>
+		 	<h5>
+				<%= "Logged in as #{current_user.email}" %>
+				<%= link_to "(logout)", logout_path %>
+		  	</h5>
+		<% end %>
+	  </footer>
   </div>
 </body>
 </html>

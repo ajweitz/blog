@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<table>
-		<% @articles.each do |article| %>
-			<tr>
-				<td><%= article.title %></td>
-				<td><%=article.body%></td>
-				<td><%= link_to 'Continue Reading...' , article_path(article) %></td>
-				<% if logged_in? %>
-				<td><%= link_to "delete", article_path(article), method: :delete, data: {confirm: "Really delete the article?"} %></td>
-				<% end %>
-				
-			</tr>
-		<% end -%>
-	</table>
-	
-	<%= link_to 'Create new article', new_article_path %>
-</body>
-</html>
+
+<div class="articles">
+	<% @articles.each do |article| %>
+		<div class="article">
+			<h2><%= article.title %></h2>
+			<%= simple_format(article.body[0..300]+"...") %>
+			<%= link_to 'Continue Reading...' , article_path(article),class: "continue_reading" %>
+			<% if logged_in? %>
+				<%= link_to "delete", article_path(article), method: :delete, data: {confirm: "Really delete the article?"} %>
+			<% end %>
+		</div>
+	<% end -%>
+	<% if logged_in? %>
+		<%= link_to 'Create new article', new_article_path %>
+	<% end %>
+</div>
+

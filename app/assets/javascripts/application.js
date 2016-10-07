@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require '_headroom.jquery'
+
+
+
+// $(document).ready(function(){
+// 	$("header").headroom();
+// 	alert("hell");
+// });

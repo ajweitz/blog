@@ -1,33 +1,27 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<div class="navbar">
-		<%= link_to 'Articles', articles_path %> >> <%= @article.title %>
-	</div>
+<div class="navbar">
+	<%= link_to 'Articles', articles_path %> >> <%= @article.title %>
+</div>
+<div class="article">
 	<h1><%= @article.title %></h1>
 
-	<p>
-		Tags:
-		<% @article.tags.each do |tag| %>
-			<%= link_to tag.name, tag_path(tag) %>
-		<% end %>
+	<p id="tags">
+	Tags:
+	<% @article.tags.each do |tag| %>
+	<%= link_to tag.name, tag_path(tag) %>
+	<% end %>
 	</p>	
-	<p>
-		<%= @article.body %>
-	</p>
+	
+	<%= simple_format(@article.body) %>
+	
 
-<% if logged_in? %>
+	<% if logged_in? %>
 	<%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
 	<%= link_to "edit", edit_article_path(@article) %>
-<% end %>
-	
+	<% end %>
+</div>
+<div id="comments">
 	<h3>Comments (<%= @article.comments.size %>) </h3>
 	<%= render partial: 'comments/form' %>
 	<%= render partial: 'articles/comment', collection: @article.comments %>
-
-</body>
-</html>
+</div>
