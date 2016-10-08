@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 	end	
 	resources :tags
 	resources :authors
-	root to: 'articles#index'
+	root 'articles#index'
 
 	resources :author_sessions, only: [ :new, :create, :destroy ]
 
