@@ -9,7 +9,6 @@
 
 #login input[type=text], input[type=password] {
 	font-size: 1em;
-	border-color: 
 
 }
 
@@ -28,6 +27,5 @@
 }
 #login input[type=submit]:hover{
 	color: black;
-	/*background-color: #E3E3E3;*/
 	border-color: black;
 }
