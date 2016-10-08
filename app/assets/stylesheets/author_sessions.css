@@ -1,0 +1,33 @@
+#login input{
+	margin-bottom: 1em;
+	width: 50%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box; 
+	padding: 0.4em;
+}
+
+#login input[type=text], input[type=password] {
+	font-size: 1em;
+	border-color: 
+
+}
+
+#login label{
+	font-weight: bold;
+}
+#login input[type=submit]{
+	font-size: 1em;
+	font-weight: bold;
+	border-color: transparent;
+    border-radius: 0px;
+    border-width: 0.5px 0.5px 0.5px 0.5px;
+    background-color: #f2f2f2;
+    color: #757575;
+	
+}
+#login input[type=submit]:hover{
+	color: black;
+	/*background-color: #E3E3E3;*/
+	border-color: black;
+}

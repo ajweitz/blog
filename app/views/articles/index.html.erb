@@ -1,17 +1,29 @@
 
 <div class="articles">
-	<% @articles.each do |article| %>
+	<% if logged_in? %>
+		<%= link_to 'Create new article',new_article_path, class: "link" %>
+	<!-- <hr> -->
+	<% end %>
+	<% @articles.reverse.each do |article| %>
 		<div class="article">
+
 			<h2><%= article.title %></h2>
+			<p id="tags">
+				Tags:
+				<% article.tags.each do |tag| %>
+					<span class="tag">
+						<%= link_to tag.name, tag_path(tag) %>
+					</span>
+				<% end %>
+			</p>
 			<%= simple_format(article.body[0..300]+"...") %>
-			<%= link_to 'Continue Reading...' , article_path(article),class: "continue_reading" %>
+			<%= link_to 'Continue Reading...' , article_path(article),class: "link" %>
 			<% if logged_in? %>
-				<%= link_to "delete", article_path(article), method: :delete, data: {confirm: "Really delete the article?"} %>
+			<br>
+				<%= link_to "Edit", edit_article_path(article),class: "link" %>
+				<%= link_to "Delete", article_path(article),class: "link", method: :delete, data: {confirm: "Really delete the article?"} %>
 			<% end %>
 		</div>
 	<% end -%>
-	<% if logged_in? %>
-		<%= link_to 'Create new article', new_article_path %>
-	<% end %>
 </div>
 

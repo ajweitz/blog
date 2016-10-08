@@ -14,11 +14,23 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require '_headroom.jquery'
 
 
 
-// $(document).ready(function(){
-// 	$("header").headroom();
-// 	alert("hell");
-// });
+$(document).ready(function(){
+
+	$(window).scroll(function(){
+		if ($(window).scrollTop() > 60) {
+			// alert("hi");
+			// $("header").addClass("hide");
+			$("header").slideUp();
+		
+		} else {
+			// $("header").removeClass("hide");
+			$("header").slideDown();
+
+		}
+
+	});
+
+});

@@ -25,6 +25,7 @@ body{
 
 	position: relative;
 	width: 100%;
+	top:5em;
 }
 #content {
 	padding: 20px;
@@ -33,4 +34,40 @@ body{
 	margin: 0 auto;
 	position: relative;
 
+}
+
+header {
+	/*background-image: image-url("logo.png");*/
+	 z-index:9; 
+	position: fixed;
+	margin: 0 !important;
+	background-color: #FDFDFD;
+	padding: 0 !important;
+	top: 0;
+	left: 0px;
+	margin-left: 0;
+	width: 100%;
+	border-bottom: solid #DFDFDF;
+    border-width: 0px 0px 1px 0px;
+	/*overflow: hidden;*/
+	/*transform: translateX(100%);*/
+	/*padding: 2em;*/
+
+
+}
+header .logo{
+	position: relative;
+	left: 1%;
+	/*background-color: yellow;*/
+	background: url("logo_small.png");
+	height: 75px;
+	width: 210px;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
 }
